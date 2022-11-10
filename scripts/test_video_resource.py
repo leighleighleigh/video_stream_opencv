@@ -33,7 +33,7 @@ if __name__ == '__main__':
     else:
         resource_name = resource
     print("Trying to open resource: ", resource_name)
-    cap = cv2.VideoCapture(resource)
+    cap = cv2.VideoCapture(resource,cv2.CAP_V4L)
     if not cap.isOpened():
         print("Error opening resource: " + str(resource))
         print("Maybe opencv VideoCapture can't open it")
