@@ -235,7 +235,7 @@ virtual void subscribe() {
   try {
     int device_num = std::stoi(video_stream_provider);
     NODELET_INFO_STREAM("Opening VideoCapture with provider: /dev/video" << device_num);
-    cap->open(device_num);
+    cap->open(device_num,cv::CAP_V4L);
   } catch (std::invalid_argument &ex) {
     NODELET_INFO_STREAM("Opening VideoCapture with provider: " << video_stream_provider);
     cap->open(video_stream_provider);
